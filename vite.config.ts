@@ -4,17 +4,13 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, './src')
-    }
-  },
+  root: '.',
+  base: './',
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html')
-      },
-      external: ['/src/main.tsx']
+      input: resolve(__dirname, 'index.html')
     }
   }
 })
