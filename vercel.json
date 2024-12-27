@@ -7,5 +7,16 @@
   ],
   "buildCommand": "npm run build",
   "installCommand": "npm install --no-audit --no-fund",
-  "framework": "vite"
+  "framework": "vite",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    }
+  ]
 } 
